@@ -4,22 +4,12 @@ public class PasswordValidator
 {
     public bool IsStrongPassword(string senha)
     {
-        if (string.IsNullOrEmpty(senha))
-        {
-            return false;
-        }
-
-        if (senha.All(char.IsDigit))
-        {
-            return false;
-        }
-
-        return !string.IsNullOrEmpty(senha) && TemTamanhoMinimo(senha) && TemMaiuscula(senha);
+        return !string.IsNullOrEmpty(senha)
+            && !senha.All(char.IsDigit)
+            && TemTamanhoMinimo(senha)
+            && TemMaiuscula(senha);
     }
     private bool TemTamanhoMinimo(string senha) => senha.Length >= 8;
 
-    private bool TemMaiuscula(string senha)
-    {
-        return senha.Any(char.IsUpper);
-    }
+    private bool TemMaiuscula(string senha) => senha.Any(char.IsUpper);
 }
