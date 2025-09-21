@@ -5,6 +5,9 @@
 
 # User-specific files
 *.rsuser
+*.gitignore
+bin/
+obj/
 *.suo
 *.user
 *.userosscache
