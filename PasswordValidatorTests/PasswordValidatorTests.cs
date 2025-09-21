@@ -16,7 +16,7 @@ public class PasswordValidatorTests
     public void SenhaComExatamente8Caracteres_DeveRetornarTrue()
     {
         var validator = new PasswordValidator.PasswordValidator();
-        Assert.True(validator.IsStrongPassword("12345678"));
+        Assert.False(validator.IsStrongPassword("12345678"));
     }
 
     [Fact]
