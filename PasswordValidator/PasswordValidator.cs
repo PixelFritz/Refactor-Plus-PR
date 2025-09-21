@@ -4,20 +4,7 @@ public class PasswordValidator
 {
     public bool IsStrongPassword(string senha)
     {
-        if (string.IsNullOrEmpty(senha))
-        {
-            return false;
-        }
-
-        if (senha.Length < 8)
-        {
-            return false;
-        }
-
-        return TemTamanhoMinimo(senha);
+        return !string.IsNullOrEmpty(senha) && TemTamanhoMinimo(senha);
     }
-    private bool TemTamanhoMinimo(string senha)
-    {
-        return senha.Length >= 8;
-    }
+    private bool TemTamanhoMinimo(string senha) => senha.Length >= 8;
 }
