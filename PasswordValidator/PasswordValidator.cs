@@ -2,7 +2,7 @@
 
 public class PasswordValidator
 {
-    public bool IsStrongPassword(string senha)
+    public bool IsStrongPassword(string? senha)
     {
         return !string.IsNullOrEmpty(senha)
             && !senha.All(char.IsDigit)
